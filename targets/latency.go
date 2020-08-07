@@ -32,6 +32,10 @@ func GetLatency(_ HTTPOptions, cfg *config.Config, c client.Client) {
 		}
 		for _, addr := range addresses {
 			log.Printf("peer address %s", addr)
+
+			if len(addr) == 0 {
+				continue
+			}
 			cmd := exec.Command("ping", "-c", "5", addr)
 			out, err := cmd.CombinedOutput()
 			if err != nil {

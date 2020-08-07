@@ -61,7 +61,7 @@ type (
 	// NetInfo is a structre which holds the details of address
 	NetInfo struct {
 		JSONRpc string        `json:"jsonrpc"`
-		ID      string        `json:"id"`
+		ID      int           `json:"id"`
 		Result  NetInfoResult `json:"result"`
 	}
 
@@ -192,7 +192,7 @@ type (
 	// CurrentBlockWithHeight struct holds the details of particular block
 	CurrentBlockWithHeight struct {
 		JSONRPC string                       `json:"jsonrpc"`
-		ID      string                       `json:"id"`
+		ID      int                          `json:"id"`
 		Result  CurrentBlockWithHeightResult `json:"result"`
 	}
 
@@ -226,7 +226,7 @@ type (
 
 	// SelfDelegationBalance struct
 	SelfDelegationBalance struct {
-		Balance string `json:"balance"`
+		Balance AccountBalance `json:"balance"`
 	}
 
 	// SelfDelegation struct which holds the result of a self delegation
@@ -243,8 +243,8 @@ type (
 
 	// LastProposedBlockAndTime struct holds the parameters of last proposed block
 	LastProposedBlockAndTime struct {
-		BlockMeta struct {
-			BlockID interface{} `json:"block_id"`
+		BlockID interface{} `json:"block_id"`
+		Block struct {
 			Header  struct {
 				Version struct {
 					Block string `json:"block"`
@@ -253,8 +253,6 @@ type (
 				ChainID            string      `json:"chain_id"`
 				Height             string      `json:"height"`
 				Time               string      `json:"time"`
-				NumTxs             string      `json:"num_txs"`
-				TotalTxs           string      `json:"total_txs"`
 				LastBlockID        interface{} `json:"last_block_id"`
 				LastCommitHash     string      `json:"last_commit_hash"`
 				DataHash           string      `json:"data_hash"`
@@ -266,8 +264,10 @@ type (
 				EvidenceHash       string      `json:"evidence_hash"`
 				ProposerAddress    string      `json:"proposer_address"`
 			} `json:"header"`
-		} `json:"block_meta"`
-		Block interface{} `json:"block"`
+			Data interface{}       `json:"data"`
+			Evidence interface{}   `json:"evidence"`
+			LastCommit interface{} `json:"last_commit"`
+		} `json:"block"`
 	}
 
 	// ProposalVoters struct holds the parameters of proposal voters
@@ -292,7 +292,7 @@ type (
 	// ValidatorsHeight struct which represents the details of validator
 	ValidatorsHeight struct {
 		Jsonrpc string `json:"jsonrpc"`
-		ID      string `json:"id"`
+		ID      int    `json:"id"`
 		Result  struct {
 			BlockHeight string `json:"block_height"`
 			Validators  []struct {
@@ -323,7 +323,7 @@ type (
 	// UnconfirmedTxns struct which holds the parameters of unconfirmed txns
 	UnconfirmedTxns struct {
 		Jsonrpc string `json:"jsonrpc"`
-		ID      string `json:"id"`
+		ID      int    `json:"id"`
 		Result  struct {
 			NTxs       string      `json:"n_txs"`
 			Total      string      `json:"total"`
