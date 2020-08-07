@@ -10,22 +10,22 @@ import (
 	client "github.com/influxdata/influxdb1-client/v2"
 )
 
-// GetGaiaCliStatus to run command gaiacli status and handle the reponse of it like
+// GetMeleCliStatus to run command melecli status and handle the reponse of it like
 //current block height and node status
-func GetGaiaCliStatus(_ HTTPOptions, cfg *config.Config, c client.Client) {
+func GetMeleCliStatus(_ HTTPOptions, cfg *config.Config, c client.Client) {
 	bp, err := createBatchPoints(cfg.InfluxDB.Database)
 	if err != nil {
 		return
 	}
 	var pts []*client.Point
 
-	cmd := exec.Command("gaiacli", "status")
+	cmd := exec.Command("melecli", "status")
 	out, err := cmd.CombinedOutput()
 	if err != nil {
-		log.Printf("Error executing cmd gaiacli status")
+		log.Printf("Error executing cmd melecli status")
 		return
 	}
-	var status GaiaCliStatus
+	var status MeleCliStatus
 	err = json.Unmarshal(out, &status)
 	if err != nil {
 		log.Printf("Error: %v", err)

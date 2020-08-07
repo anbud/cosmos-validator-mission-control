@@ -81,8 +81,8 @@ type (
 		VotingPower string      `json:"voting_power"`
 	}
 
-	// GaiaCliStatusNodeInfo struct holds the parameters of a node status
-	GaiaCliStatusNodeInfo struct {
+	// MeleCliStatusNodeInfo struct holds the parameters of a node status
+	MeleCliStatusNodeInfo struct {
 		ProtocolVersion interface{} `json:"protocol_version"`
 		ID              string      `json:"id"`
 		ListenAddr      string      `json:"listen_addr"`
@@ -93,9 +93,9 @@ type (
 		Other           interface{} `json:"other"`
 	}
 
-	// GaiaCliStatus structure which holds the parameteres of node,validator and sync info
-	GaiaCliStatus struct {
-		NodeInfo      GaiaCliStatusNodeInfo `json:"node_info"`
+	// MeleCliStatus structure which holds the parameteres of node,validator and sync info
+	MeleCliStatus struct {
+		NodeInfo      MeleCliStatusNodeInfo `json:"node_info"`
 		SyncInfo      SyncInfo              `json:"sync_info"`
 		ValidatorInfo ValidatorInfo         `json:"validator_info"`
 	}

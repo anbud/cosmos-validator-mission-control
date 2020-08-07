@@ -614,7 +614,7 @@
         "targets": [
           {
             "groupBy": [],
-            "measurement": "vcf_gaiad_status",
+            "measurement": "vcf_meled_status",
             "orderByTime": "ASC",
             "policy": "default",
             "refId": "A",
@@ -635,7 +635,7 @@
         "thresholds": "",
         "timeFrom": null,
         "timeShift": null,
-        "title": "Gaiad Status",
+        "title": "Meled Status",
         "type": "singlestat",
         "valueFontSize": "70%",
         "valueMaps": [

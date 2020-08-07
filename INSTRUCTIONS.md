@@ -6,7 +6,7 @@
 **Setup a rest-server on validator instance** :
 If your validator instance does not have a rest server running, execute this command to setup the rest server
 ```sh
-gaiacli rest-server --chain-id cosmoshub-3 --laddr tcp://127.0.0.1:1317
+melecli rest-server --chain-id cosmoshub-3 --laddr tcp://127.0.0.1:1317
 ```
 
 **Install Grafana on ubuntu**
@@ -162,9 +162,9 @@ iii. Summary (Which gives a quick information about validator and system metrics
 **List of validator monitoring metrics**
 
 - Validator Details :  Displays the details of a validator like moniker, website, keybase identity and details.
-- Gaiad Status :  Displays whether the gaiad is running or not in the from of UP and DOWN.
+- Meled Status :  Displays whether the meled is running or not in the from of UP and DOWN.
 - Validator Status :  Displays the validator health. Shows Voting if the validator is in active state or else Jailed.
-- Gaiad Version : Displays the version of gaia currently running.
+- Meled Version : Displays the version of mele currently running.
 - Validator Caught Up : Displays whether the validator node is in sync with the network or not.
 - Block Time Difference : Displays the time difference between previous block and current block.
 - Current Block Height :  Validator : Displays the current block height committed by the validator.
@@ -207,7 +207,7 @@ For alerts regarding system metrics, a telegram bot can be set up on the dashboa
  - Alert when missed blocks when the missed blocks count reaches or exceedes **missed_blocks_threshold** which is user configured in *config.toml*
  - Alert when no.of peers when the count falls below of **num_peers_threshold** which is user configured in *config.toml*
 - Alert when the block difference between network and validator reaches or exceeds the **block_diff_threshold** which is user configured in *config.toml*
-- Alert when the gaiad status is not running on validator instance.
+- Alert when the meled status is not running on validator instance.
 - Alert when a new proposal is created.
 - Alert when the proposal is moved to voting period, passed or rejected.
 - Alert when voting period proposals is due in less than 24 hours and also if the validator didn't vote on proposal yet.
@@ -218,7 +218,7 @@ For alerts regarding system metrics, a telegram bot can be set up on the dashboa
 
 - This dashboard is to show a quick information about validator details and system metrics.
 
-- Validator identity (Moniker, Website, Keybase Identity, Details, Operator Address and Account Address), validator summary (Gaiad Status, Validator Status, Voting Power, Height Difference and No.Of peers) these are the metrics which are related to validator details.
+- Validator identity (Moniker, Website, Keybase Identity, Details, Operator Address and Account Address), validator summary (Meled Status, Validator Status, Voting Power, Height Difference and No.Of peers) these are the metrics which are related to validator details.
 
 - CPU usage, RAM Usage, Memory usage and information about disk usage, these metrics are showing under system metrics summary.
  

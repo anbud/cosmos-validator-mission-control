@@ -34,7 +34,7 @@ func InitTargets(cfg *config.Config) *Targets {
 				Endpoint: cfg.ValidatorRpcEndpoint,
 				Method:   http.MethodGet,
 			},
-			Func:        CheckGaiad,
+			Func:        CheckMeled,
 			ScraperRate: cfg.Scraper.Rate,
 		},
 		{
@@ -49,8 +49,8 @@ func InitTargets(cfg *config.Config) *Targets {
 		},
 		{
 			ExecutionType: "cmd",
-			Name:          "Gaiacli status cmd",
-			Func:          GetGaiaCliStatus,
+			Name:          "Melecli status cmd",
+			Func:          GetMeleCliStatus,
 			ScraperRate:   cfg.Scraper.Rate,
 		},
 		{
@@ -75,8 +75,8 @@ func InitTargets(cfg *config.Config) *Targets {
 		},
 		{
 			ExecutionType: "cmd",
-			Name:          "Gaiad Version",
-			Func:          GaiadVersion,
+			Name:          "Meled Version",
+			Func:          MeledVersion,
 			ScraperRate:   cfg.Scraper.Rate,
 		},
 		{

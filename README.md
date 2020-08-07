@@ -38,7 +38,7 @@ It shows you -
 
 * Your validator's identifying information
 * Answers to these key validator health questions  
-* Is gaiad running?
+* Is meled running?
 * Am I voting?
 * What's my voting power?
 * Am I synced to the network?
@@ -52,7 +52,7 @@ This view provides a comprehensive look at validator details and performance, ex
 It shows you -
 
 * Validator identity
-* Validator availability, including what gaiad version you're running
+* Validator availability, including what meled version you're running
 * Validator Performance, including block time, missed blocks (based on a threshold you configure), and number of unconfirmed transactions in the mempool
 * Validator connectivity, including which peers you're connected to and the latency between the validator and each peer
 * Proposals, which was a community requested feature. You'll see a list of proposals in each period, e.g. deposit, voting, completed, as well whether or not you participated in each period.
@@ -85,7 +85,7 @@ Here's the full list of alerts -
 
 1. Availability
 * Server available and reachable - Alert if unreachable
-* Gaiad running - Alert if Gaiad stops
+* Meled running - Alert if Meled stops
 * Validator active, i.e. not jailed - Alert if validator's jailed
 
 2. Performance
