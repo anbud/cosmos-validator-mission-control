@@ -76,7 +76,7 @@ func ReadFromFile() (*Config, error) {
 	v := viper.New()
 	v.AddConfigPath(".")
 	v.AddConfigPath("./config/")
-	v.AddConfigPath("/etc/chain-monit/")
+	v.AddConfigPath("/etc/mele-monitor/")
 	v.SetConfigName("config")
 	if err := v.ReadInConfig(); err != nil {
 		log.Fatalf("error while reading config.toml: %v", err)
