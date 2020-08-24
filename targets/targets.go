@@ -79,7 +79,6 @@ func InitTargets(cfg *config.Config) *Targets {
 			Func:          MeledVersion,
 			ScraperRate:   cfg.Scraper.Rate,
 		},
-		/*
 		{
 			ExecutionType: "http",
 			Name:          "Proposals",
@@ -90,7 +89,6 @@ func InitTargets(cfg *config.Config) *Targets {
 			Func:        GetProposals,
 			ScraperRate: cfg.Scraper.Rate,
 		},
-		*/
 		{
 			ExecutionType: "http",
 			Name:          "Self Delegation",
